@@ -82,9 +82,45 @@ const newProduct2 = {
   description: "Description product",
   price: 100,
   thumbnail: "path/a/image.jpg",
-  code: "ABC123",
-  stock: 10,
+  code: "ABC234",
+  stock: 3,
 };
+const newProduct3 = {
+  title: "New Product 3",
+  description: "Description product",
+  price: 100,
+  thumbnail: "path/a/image.jpg",
+  code: "ABC345",
+  stock: 7,
+};
+const newProduct4 = {
+  title: "New Product 4",
+  description: "Description product",
+  price: 100,
+  thumbnail: "path/a/image.jpg",
+  code: "ABC456",
+  stock: 6,
+};
+// await manager1.addProduct(newProduct);
+// await manager1.addProduct(newProduct2);
+// await manager1.addProduct(newProduct3);
+// await manager1.addProduct(newProduct4);
+// const products = await manager1.getProducts();
+// console.log("products: ", products);
 
-await manager1.addProduct(newProduct);
-await manager1.addProduct(newProduct2);
+// const product1 = await manager1.getProductById(1);
+// console.log("product1: ", product1);
+// const product3 = await manager1.getProductById(3);
+// console.log("product3: ", product3);
+
+// await manager1.updateProduct(1, {
+//   title: "New Product Updated",
+// });
+
+// const updatedProduct1 = await manager1.getProductById(1);
+// console.log("updatedProduct1: ", updatedProduct1);
+
+// await manager1.deleteProduct(3);
+// await manager1.deleteProduct(1);
+// const products2 = await manager1.getProducts();
+// console.log("products2: ", products2);
