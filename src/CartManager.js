@@ -51,13 +51,23 @@ class CartManager {
       const product = product.find((item) => item.id === id);
       if (product === undefined) {
         console.log(`El producto con id ${id} no existe.`);
-
         let cartsALL = await this.getCarts();
-        let cartFilter = cartsALL.filter((prod) => prod.id != id);
-        let cartsConcat = [
-          { id: cartId, products: [{ id: productsById.id, cantidad: 1 }] },
-          ...cartFilter,
-        ];
+        let cartFilter = cartsALL.filter((cart) => cart.id != cartId);
+
+        if (CartId.products.some((prod) => prod.id === productsById)) {
+          let moreProductInCart = CartId.products.find(
+            (prod) => prod.id === productsById
+          );
+          moreProductInCart.cantidad++;
+          let cartsConcat = [productInCart, ...cartFilter];
+          await this.addCarts(cartsConcat);
+          return "Producto sumado al cart";
+        }
+        CartId.product.push({ id: productsById.id, cantidad: 1 });
+
+        let productFilter = cartsALL.filter((prod) => prod.id != productiD);
+        let cartsConcat = [productInCart, ...productFilter];
+
         await this.addCarts(cartsConcat);
         return "Producto agregado al cart";
       }
