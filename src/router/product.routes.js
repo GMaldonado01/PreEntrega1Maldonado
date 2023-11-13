@@ -21,7 +21,7 @@ ProductRouter.get("/:pid", async (req, res) => {
   if (!pid) {
     return res.send("El producto no existe");
   }
-  const allProducts = await manager.getProducts();
+  const allProducts = await product.getProducts();
   const productsById = allProducts.find((product) => product.id === pid);
   res.send(productsById);
 });
